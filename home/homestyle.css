@@ -1,0 +1,142 @@
+#containeritem {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: rgb(255, 233, 216);
+
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+}
+
+.styleheader{
+    display: flex;
+    flex-direction: row;
+    background-color: #F0A33F;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #f4ba6e;
+    padding: 2px;
+    margin: 10px;
+}
+
+div[target="judulwebsite"] {
+    display: flex;
+    align-items: center;
+}
+
+p {
+    font-family: Helvetica;
+}
+
+p[target="textjudul"]::first-line {
+    text-decoration: solid;
+    font-weight: bold;
+    font-size: large;
+}
+
+p[target="textjudul"] {
+    font-family: Helvetica;
+    color: #362714;
+}
+
+.navbar {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: #F4BA6E;
+
+}
+
+.video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+}
+
+
+.body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    background-color: #f8db9d;
+    padding: 0;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 30px;
+    background-color: #F0A33F;
+    color: transparent;
+    margin: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    transition: ease-out 0.2s;
+}
+
+.sidebar:hover {
+    width: 130px;
+    transition: ease-in 0.2s;
+    color: #362714;
+}
+.sidebar ul {
+    padding: 0;
+    width: 100%;
+}
+
+.sidebar i {
+    color: #362714;
+}
+
+.listtitle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px;
+    font-size: medium;
+}
+.listsetting {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px;
+    font-size: medium;
+}
+
+.listsetting:hover{
+    background-color: #F4BA6E;
+}
+
+.listsetting p {
+    margin-left: 5px;
+}
+
+.content {
+    display: flex;
+    padding-left: 20px;
+}
+
+
+.foot {
+    background-color: rgb(51, 51, 51);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    z-index: 5;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Homepage</title>
+        <link rel="stylesheet" href="formstyle.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <script src="formscript.js"></script>
+    </head>
+    
+    <body>
+        <div id="containeritem">
+            <header class="styleheader">
+                <img src="https://cdn.discordapp.com/attachments/1119449485819514962/1157940584405815296/image.png?ex=651a6fb4&is=65191e34&hm=971c7cdfc856eab126b0087958d5d4826716afc2832dc377b8d2d464d826194a&" alt="ini gambar" class="logo">
+                <div target="judulwebsite">
+                    <p target="textjudul">
+                        UJIAN TENGAH SEMESTER <br>
+                        Pemrograman Web RB <br>
+                        David Gunawan - 121140062 <br>
+                    </p>
+                </div>
+            </header>
+            <div class="navbar">
+                <h3>FORM</h3>
+            </div>
+            
+            <menu class="body">
+                <div class="sidebar">
+                    <li class="listsetting" id="listsidebar1">
+                        <i class="material-icons">home</i>
+                        <p>Homepage</p>
+                    </li>
+                    <li class="listsetting" id="listsidebar2">
+                        <i class="material-icons">post_add</i>
+                        <p>Form</p>
+                    </li>
+                    <li class="listsetting" id="listsidebar3">
+                        <i class="material-icons">table_view</i>
+                        <p>Table</p>
+                    </li>
+                </div>
+                
+                <div class="content">
+                    <h2>Form Pendaftaran</h2>
+                    <form action="form.html" method="GET" onsubmit="ambildata()">
+                        <div class="input-container">
+                            <div class="column">
+                                <div class="input">
+                                    <label for="nama">Nama</label>
+                                    <input type="text" id="nama" target="" required name="nama">
+                                </div>
+                                <div class="input">
+                                    <label for="nim">NIM</label>
+                                    <input type="text" id="nim" target="" required name="nim">
+                                </div>
+                                <div class="input">
+                                    <label for="prodi">Program Studi</label>
+                                    <input type="text" id="prodi" target="" required name="prodi">
+                                </div>
+                                <div class="input">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" target="" required name="email">
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="input">
+                                    <label for="pw">Password</label>
+                                    <input type="password" id="pw" target="" required name="pw">
+                                </div>
+                                <div class="input">
+                                    <label for="kelamin">Jenis Kelamin</label>
+                                    <input type="text" id="kelamin" target="" required name="kelamin">
+                                </div>
+                                <div class="input">
+                                    <label for="tgllahir">Tanggal Lahir (DD/MM/YYYY)</label>
+                                    <input type="datetime" id="tgllahir" target="" required name="tgllahir">
+                                </div>
+                                <div class="input">
+                                    <label for="alamat">Alamat</label>
+                                    <input type="text" id="alamat" target="" required name="alamat">
+                                </div>
+                            </div>
+                        </div>
+                        <input type="submit" value="Daftar" target="tombolsubmit">
+                    </form>
+                </div>
+            </menu>
+            
+            <footer class="foot">
+                David Gunawan - 121140062 © 2023
+            </footer>
+        </div>
+        <script>
+            let datatable = []
+            var dummy1 = ["Budi", 121140104, "Farmasi", "budi@121140104@student.itera.ac.id", "1248fafj25", "Laki-Laki", "12/04/2003", "Jl. Panjaitan No 2"];
+            datatable.push(dummy1);
+            var dummy2 = ["Adi", 121150052, "Teknik Geomatika", "adi@121150052@student.itera.ac.id", "4gi285g9fi", "Laki-Laki", "30/09/2002", "Jl. Antasari No 32"];
+            datatable.push(dummy2);
+            var dummy3 = ["Adel", 121142085, "Teknik Elektro", "adel@121142085@student.itera.ac.id", "gsobj8204fa", "Perempuan", "03/04/2003", "Jl. Diponegoro No 80"];
+            datatable.push(dummy3);
+            var dummy4 = ["David", 121140062, "Teknik Informatika", "david@121140062@student.itera.ac.id", "asifja89fjw", "Laki-Laki", "02/01/2003", "Jl. Sulaiman No 31"];
+            datatable.push(dummy4);
+            var dummy5 = ["Novia", 121420067, "Teknik Mesin", "novia@121420067@student.itera.ac.id", "oajvaijv34", "Perempuan", "30/11/2003", "Jl. Sultan Agung No 2"];
+            datatable.push(dummy5);
+            
+            let inputmhs = [];
+            function ambildata() {
+                if (sessionStorage.length>0) {
+                    datatable = JSON.parse(sessionStorage.getItem('ArrayList'));
+                }
+                var nama = document.getElementById("nama").value;
+                inputmhs.push(nama);
+                var nim = document.getElementById("nim").value;
+                inputmhs.push(nim);
+                var prodi = document.getElementById("prodi").value;
+                inputmhs.push(prodi);
+                var email = document.getElementById("email").value;
+                inputmhs.push(email);
+                var pw = document.getElementById("pw").value;
+                inputmhs.push(pw);
+                var kelamin = document.getElementById("kelamin").value;
+                inputmhs.push(kelamin);
+                var tgllahir = document.getElementById("kelamin").value;
+                inputmhs.push(tgllahir);
+                var alamat = document.getElementById("alamat").value;
+                inputmhs.push(alamat);
+                datatable.push(inputmhs);
+                sessionStorage.setItem('ArrayList', JSON.stringify(datatable));
+                inputmhs.length = 0;
+                alert("Berhasil Mendaftar, Silahkan ke page Table untuk melihat data yang diisi")
+            return false;
+            }
+        </script>
+        <script src="formscript.js"></script>
+    </body>
+</html>
